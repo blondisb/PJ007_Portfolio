@@ -1,0 +1,8 @@
+<hr />
+<h3>{{ post.name }}</h3>
+<caption>
+  {{ post.date | date:"M, d, Y" | upper }}
+</caption>
+<p>{{ post.description }}</p>
+<img src="{{ post.image.url }}" alt="" />
+<br />

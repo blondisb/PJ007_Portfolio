@@ -1,0 +1,17 @@
+{% comment %} {% extends 'PJ007_Portfolio/base.html' %} {% endcomment %}
+{% load static %}
+
+<h1>R</h1>
+
+{% for project in projects %}
+    <hr>
+    <h3>{{ project.name }}</h3>
+    <p>{{ project.description }}</p>
+    <img src="{{ project.image.url }}" alt="Picture_project{{ project.id }}">
+
+    {% if project.url %}
+        <a href="{{ project.url }}">Go site</a>
+    {% endif %}
+    <br>
+
+{% endfor %}
