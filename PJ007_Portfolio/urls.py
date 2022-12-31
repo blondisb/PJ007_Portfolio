@@ -22,7 +22,7 @@ from App_Portfolio import views as vw
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('App_Portfolio.urls')),
-    path('blogs/', include('App_Blog.urls')),
+    path('blogs/', include('App_Blog.urls'), name='URL_blogs'),
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

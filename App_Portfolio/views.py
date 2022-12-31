@@ -7,3 +7,6 @@ def VW_home(request):
     return render(request, 'home.html', {
         'projects': projects
     })
+
+def VW_contact(request):
+    return render(request, 'contact.html')

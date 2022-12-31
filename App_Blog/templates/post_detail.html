@@ -1,8 +1,13 @@
-<hr />
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<hr>
 <h3>{{ post.name }}</h3>
 <caption>
   {{ post.date | date:"M, d, Y" | upper }}
 </caption>
-<p>{{ post.description }}</p>
-<img src="{{ post.image.url }}" alt="" />
-<br />
+<p>{{ post.description | safe }}</p>
+<img class="img-fluid" src="{{ post.image.url }}" alt="">
+<br>
+
+{% endblock %}

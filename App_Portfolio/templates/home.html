@@ -1,13 +1,15 @@
-{% comment %} {% extends 'PJ007_Portfolio/base.html' %} {% endcomment %}
+{% extends 'layouts/base.html' %}
+{% block content %}
 {% load static %}
 
-<h1>R</h1>
+<h1>This is my site.</h1>
+<p> Now, you are here. And must to pay for that.</p>
 
 {% for project in projects %}
     <hr>
     <h3>{{ project.name }}</h3>
     <p>{{ project.description }}</p>
-    <img src="{{ project.image.url }}" alt="Picture_project{{ project.id }}">
+    <img class="img-fluid" src="{{ project.image.url }}" alt="Picture_project{{ project.id }}">
 
     {% if project.url %}
         <a href="{{ project.url }}">Go site</a>
@@ -15,3 +17,4 @@
     <br>
 
 {% endfor %}
+{% endblock %}
