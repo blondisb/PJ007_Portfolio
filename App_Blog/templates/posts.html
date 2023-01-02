@@ -4,12 +4,21 @@
 <h1>Posts</h1>
 
 {% for post in posts %}
-    
-    <hr>
-    <h3><a href="{% url 'AppBlog:URL_post_detail' pk=post.id %}">{{ post.name }}</a></h3>
-    <caption>{{ post.date | date:"M, d, Y" | upper }}</caption>
-    <p>{{ post.description | striptags | truncatechars:80 }}</p>
-    <br>
+<div class="container p-3">
+    <div class="card card-body">
+        <div class="row">
+            <div class="col-3">
+                <img class="img-fluid" src="{{ post.image.url }}" alt="">
+            </div>
+            <div class="col-9">
+                <h3><a href="{% url 'AppBlog:URL_post_detail' pk=post.id %}">{{ post.name }}</a></h3>
+                <caption>{{ post.date | date:"M, d, Y" | upper }}</caption>
+                <p>{{ post.description | striptags | truncatechars:80 }}</p>
 
+            </div>
+        </div>
+    </div>
+</div>
 {% endfor %}
+
 {% endblock %}
